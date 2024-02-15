@@ -1,0 +1,6 @@
+{
+    "ownerPrivateKey": "12e16088cf269eb758b9e26464d85b87c71989bc3f414a2fe3d8717ca25bbbef",
+    "contractAddress": "0x6941c56C1Ce309D29F48146eE09680aEcceEd6ca",
+    "mumbaiProvaider": "https://rpc-mumbai.maticvigil.com",
+    "polygonProvaider": ""
+}
