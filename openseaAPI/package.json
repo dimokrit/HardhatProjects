@@ -1,0 +1,19 @@
+{
+  "name": "openseaapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "api": "^6.1.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1",
+    "node-schedule": "^2.1.1",
+    "polygonscan-api": "^1.0.4",
+    "web3": "^4.7.0"
+  }
+}
