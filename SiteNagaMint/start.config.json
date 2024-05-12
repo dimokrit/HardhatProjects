@@ -1,6 +1,0 @@
-{
-  "apps": [{
-    "name": "girand-react-frontend",
-    "script": "serve -s build"
-  }]
-}
