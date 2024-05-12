@@ -1,0 +1,25 @@
+{
+  "name": "trading-nft-bot",
+  "version": "1.0.0",
+  "description": "Bot to trade nft",
+  "main": "main.js",
+  "scripts": {
+    "newEvent": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "@types/node": "^20.11.5",
+    "api": "^6.1.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.10.0",
+    "node-cron": "^3.0.3",
+    "node-schedule": "^2.1.1",
+    "opensea-js": "^7.1.5",
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
