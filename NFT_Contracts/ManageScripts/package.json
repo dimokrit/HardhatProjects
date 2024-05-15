@@ -1,0 +1,26 @@
+{
+  "name": "managescripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "newWhitelist": "npx hardhat run scripts/newWhitelist.js",
+    "startDrop": "npx hardhat run scripts/startDrop.js",
+    "getRoot": "npx hardhat run scripts/getRoot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.21.0",
+    "merkletreejs": "^0.3.11",
+    "solc": "^0.8.24",
+    "web3": "^4.5.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  }
+}
