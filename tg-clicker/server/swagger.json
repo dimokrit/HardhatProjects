@@ -1,0 +1,760 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Girand Clicker",
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://clicker-backend.inlostcity.com/api/"
+    }
+  ],
+  "paths": {
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Start clicker app",
+        "description": "Start clicker app",
+        "operationId": "start",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "an authorization header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/allData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/user/hit": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Hit event",
+        "description": "Hit event",
+        "operationId": "hit",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/hit"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/user/heal": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Heal event",
+        "description": "Heal event",
+        "operationId": "heal",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/heal"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/user/task": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Check task completion",
+        "description": "Check task completion",
+        "operationId": "task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/taskReq"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/taskRes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/guild/create": {
+      "post": {
+        "tags": [
+          "guild"
+        ],
+        "summary": "Create guild",
+        "description": "Create guild",
+        "operationId": "createGuild",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/guildCreateReq"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/guildCreateRes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/guild/join": {
+      "post": {
+        "tags": [
+          "guild"
+        ],
+        "summary": "Join to guild",
+        "description": "Join to guild",
+        "operationId": "joinGuild",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/guildChangeReq"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/guildChangeRes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/guild/leave": {
+      "post": {
+        "tags": [
+          "guild"
+        ],
+        "summary": "Leave from guild",
+        "description": "Leave from guild",
+        "operationId": "leaveGuild",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/guildChangeReq"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/guildChangeRes"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/guild/reward": {
+      "post": {
+        "tags": [
+          "guild"
+        ],
+        "summary": "Send reward to guilds owner",
+        "description": "Send reward to guilds owner",
+        "operationId": "reward",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "success": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/rating/users": {
+      "get": {
+        "tags": [
+          "rating"
+        ],
+        "summary": "Get users rating",
+        "description": "Get users rating",
+        "operationId": "usersRating",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usersRating"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/rating/guilds": {
+      "get": {
+        "tags": [
+          "rating"
+        ],
+        "summary": "Get guilds rating",
+        "description": "Get guilds rating",
+        "operationId": "guildsRating",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/guildsRating"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/guild/current/{guildId}": {
+      "get": {
+        "tags": [
+          "guild"
+        ],
+        "summary": "Get current guild",
+        "description": "Get current guild",
+        "operationId": "current Guilds",
+        "parameters": [
+          {
+            "name": "guildId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/currentGuild"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "user": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          }
+        }
+      },
+      "allData": {
+        "type": "object",
+        "properties": {
+          "bossId": {
+            "type": "integer"
+          },
+          "bossHP": {
+            "type": "integer"
+          },
+          "userHP": {
+            "type": "integer"
+          },
+          "currentUserHP": {
+            "type": "integer"
+          },
+          "currentBossHP": {
+            "type": "integer"
+          },
+          "coins": {
+            "type": "integer"
+          },
+          "potions": {
+            "type": "integer"
+          },
+          "regenHP": {
+            "type": "integer"
+          },
+          "regenTime": {
+            "type": "integer"
+          },
+          "beforeRevive": {
+            "type": "integer"
+          },
+          "guildId": {
+            "type": "integer"
+          },
+          "refCount": {
+            "type": "integer"
+          },
+          "refLink": {
+            "type": "string"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "hit": {
+        "type": "object",
+        "properties": {
+          "currentDamage": {
+            "type": "integer"
+          },
+          "bossDamage": {
+            "type": "integer"
+          },
+          "currentUserHP": {
+            "type": "integer"
+          },
+          "currentBossHP": {
+            "type": "integer"
+          },
+          "coins": {
+            "type": "integer"
+          },
+          "beforeRevive": {
+            "type": "integer"
+          },
+          "kill": {
+            "type": "boolean"
+          },
+          "newBoss": {
+            "type": "object",
+            "properties": {
+              "bossId": {
+                "type": "integer"
+              },
+              "bossHP": {
+                "type": "integer"
+              },
+              "userHP": {
+                "type": "integer"
+              },
+              "regenHP": {
+                "type": "integer"
+              },
+              "regenTime": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "heal": {
+        "type": "object",
+        "properties": {
+          "userHP": {
+            "type": "integer"
+          },
+          "used": {
+            "type": "boolean"
+          },
+          "currentUserHP": {
+            "type": "integer"
+          },
+          "potions": {
+            "type": "integer"
+          }
+        }
+      },
+      "taskReq": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "taskId": {
+            "type": "integer"
+          }
+        }
+      },
+      "taskRes": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "boolean"
+          },
+          "coins": {
+            "type": "integer"
+          }
+        }
+      },
+      "guildCreateReq": {
+        "type": "object",
+        "properties": {
+          "guildId": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "guildCreateRes": {
+        "type": "object",
+        "properties": {
+          "refLink": {
+            "type": "string"
+          }
+        }
+      },
+      "guildChangeReq": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "guildId": {
+            "type": "integer"
+          }
+        }
+      },
+      "guildChangeRes": {
+        "type": "object",
+        "properties": {
+          "userCount": {
+            "type": "integer"
+          },
+          "rating": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "guild_coins": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "damageBonus": {
+            "type": "integer"
+          },
+          "hpBonus": {
+            "type": "integer"
+          }
+        }
+      },
+      "usersRating": {
+        "type": "object",
+        "properties": {
+          "totalUsers": {
+            "type": "integer"
+          },
+          "currentRank": {
+            "type": "integer"
+          },
+          "rating": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/userRatingItem"
+            }
+          }
+        }
+      },
+      "userRatingItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "coins": {
+            "type": "integer"
+          }
+        }
+      },
+      "guildsRating": {
+        "type": "object",
+        "properties": {
+          "totalGuilds": {
+            "type": "integer"
+          },
+          "currentRank": {
+            "type": "integer"
+          },
+          "rating": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/guildRatingItem"
+            }
+          }
+        }
+      },
+      "guildRatingItem": {
+        "type": "object",
+        "properties": {
+          "guildId": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "coins": {
+            "type": "integer"
+          },
+          "userCount": {
+            "type": "integer"
+          }
+        }
+      },
+      "guildsAll": {
+        "type": "object",
+        "properties": {
+          "totalGuilds": {
+            "type": "integer"
+          },
+          "guilds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/guildRatingItem"
+            }
+          }
+        }
+      },
+      "currentGuild": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "coins": {
+            "type": "integer"
+          },
+          "userCount": {
+            "type": "integer"
+          },
+          "damageBonus": {
+            "type": "integer"
+          },
+          "hpBonus": {
+            "type": "integer"
+          },
+          "rating": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/userRatingItem"
+            }
+          }
+        }
+      }
+    }
+  }
+}

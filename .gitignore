@@ -10,6 +10,7 @@ node_modules
 */build
 */artifacts
 /artifacts
+*/cache
 
 # игнорируем файлы, которые не должны попасть в репо
 */.env

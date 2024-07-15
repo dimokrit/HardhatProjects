@@ -1,0 +1,29 @@
+version: '3.9'
+
+volumes:
+    db_data: {}
+
+services:
+    back:
+        container_name: game_bot_back
+        ports:
+            - 3094:${APP_PORT}
+        networks:
+            game_bot_network:
+        build:
+            context: .
+            dockerfile: .docker/Dockerfile
+        restart: always
+        depends_on:
+            - cache
+        links:
+            - cache
+    cache:
+        container_name: game_bot_cache
+        image: redis:7.0.8-alpine
+        restart: always
+        networks:
+            game_bot_network:
+
+networks:
+    game_bot_network:
