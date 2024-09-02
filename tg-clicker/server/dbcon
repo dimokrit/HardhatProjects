@@ -1,1 +1,0 @@
-psql -h db-postgresql-fra1-36553-do-user-10546680-0.c.db.ondigitalocean.com -p 25060 -U doadmin -d defaultdb
